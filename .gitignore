@@ -1,0 +1,41 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub-cache/
+build/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace/
+macos/Pods/
+macos/Runner.xcworkspace/
+linux/flutter/ephemeral/
+windows/flutter/ephemeral/
+*.lock
+
+# IntelliJ related
+*.iml
+.idea/
+
+# VS Code related
+.vscode/
+
+# Xcode related
+DerivedData/
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad
+*.moved-aside
+*.hmap
+
+# Android related
+.gradle
+*.jks
+*.keystore
+*.apk
+*.ap_
+
+# Others
+*.DS_Store
+.env
