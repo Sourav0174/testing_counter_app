@@ -10,16 +10,13 @@ class UserListView extends GetView<UserListController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut<UserListController>(() => UserListController());
-
     return Obx(() {
       if (controller.isLoading.value) {
         return const Center(child: CircularProgressIndicator());
       }
 
-      return Scaffold(
-        appBar: _buildAppBar(),
-        body: SafeArea(child: _buildUserList()),
+      return Column(
+        children: [_buildAppBar(), Expanded(child: _buildUserList())],
       );
     });
   }
@@ -45,7 +42,14 @@ class UserListView extends GetView<UserListController> {
         ),
       ),
       child: ListView.builder(
-        padding: EdgeInsets.all(12.w),
+        padding: EdgeInsets.only(
+          left: 12.w,
+          right: 12.w,
+          top: 12.h,
+          bottom:
+              kBottomNavigationBarHeight +
+              24.h, // 👈 Bottom padding for scroll under nav
+        ),
         itemCount: controller.userList.length,
         itemBuilder: (context, index) {
           final user = controller.userList[index];
@@ -71,7 +75,6 @@ class UserListView extends GetView<UserListController> {
                       ),
                     ),
                   ),
-
                   SizedBox(width: 16.w),
                   Expanded(
                     child: Column(

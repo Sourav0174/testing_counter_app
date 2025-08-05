@@ -47,8 +47,8 @@ class HomeView extends GetView<HomeController> {
                   iconSize: 24.sp,
                   items: const [
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.add),
-                      label: 'Counter',
+                      icon: Icon(Icons.person),
+                      label: 'Users',
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.list),

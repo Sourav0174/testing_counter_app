@@ -18,6 +18,7 @@ class UserListController extends GetxController {
       isLoading(true);
       final response = await http.get(
         Uri.parse('https://reqres.in/api/users?page=1'),
+        headers: {"x-api-key": "reqres-free-v1"},
       );
 
       if (response.statusCode == 200) {
